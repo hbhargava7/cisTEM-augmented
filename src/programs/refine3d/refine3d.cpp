@@ -28,8 +28,10 @@ class TextInput {
 	private:
 		char path[1000];
 
+
 	public:
 		TextInput(const char * filePath);
+		std::string GetLineWithFirstWord(const char * firstWord);
 		
 		// float GetFloatFromFile(const char * filePath);
 		// int GetIntFromFile(const char * filePath);
@@ -39,7 +41,18 @@ class TextInput {
 TextInput::TextInput(const char * filePath)
 {
 	// path = filePath;
-	wxPrintf("Initialized textinput");
+	wxPrintf("\nInitialized textinput");
+	path = filePath;
+}
+TextInput::GetLineWithFirstWord(const char * firstWord)
+{
+	wxPrintf("\nGetting line with first word %s", firstWord);
+	std::ifstream file(path);
+    std::string str; 
+    while (std::getline(file, str))
+    {
+        wxPrintf(str);
+    }
 }
 
 
