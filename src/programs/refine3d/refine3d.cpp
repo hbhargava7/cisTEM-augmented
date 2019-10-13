@@ -139,7 +139,7 @@ void Refine3DApp::DoInteractiveUserInput()
 
 	// wxAppConsole::argv[1] contains the filepath
 	wxPrintf("\n\n        **   Welcome to Hersh's Augmented Refine3d   **\n\n");
-	wxPrintf("\n Reading parameters from file: %s" % std::string(wxAppConsole::argv[1]));
+	wxPrintf("\n Reading parameters from file: %s",std::string(wxAppConsole::argv[1]));
 	
 
 	TextInput *input = new TextInput(wxAppConsole::argv[1]);
