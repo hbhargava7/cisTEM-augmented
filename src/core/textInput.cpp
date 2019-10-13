@@ -3,7 +3,7 @@
 
 using json = nlohmann::json;
 
-TextInput::TextInput(wxString filePath)
+TextInput::TextInput(const char * filePath)
 {
 	path = filePath;
 
