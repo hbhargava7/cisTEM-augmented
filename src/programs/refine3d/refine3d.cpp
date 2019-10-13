@@ -63,7 +63,7 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
 {	
 	wxPrintf("\nLooking for word:\n");
 
-	wxPrintf(wxString(patch::to_string(word)));
+	// wxPrintf(wxString(patch::to_string(word)));
 	std::ifstream file(path.c_str());
     std::string str; 
     while (std::getline(file, str))
