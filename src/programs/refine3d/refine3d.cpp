@@ -1,6 +1,6 @@
 #include "../../core/core_headers.h"
 #include <wx/cmdline.h>
-#include <../../core/nlohmann/json.hpp>
+#include "../../core/nlohmann/json.hpp"
 
 using json = nlohmann::json;
 
