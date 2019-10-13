@@ -51,7 +51,7 @@ std::string TextInput::GetLineWithFirstWord(std::string * firstWord)
     std::string str; 
     while (std::getline(file, str))
     {
-        wxPrintf(str);
+        wxPrintf("Current Line: %s",str);
     }
 }
 
