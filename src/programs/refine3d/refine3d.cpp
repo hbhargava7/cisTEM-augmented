@@ -1,8 +1,8 @@
 #include "../../core/core_headers.h"
 #include <wx/cmdline.h>
-#include "../../core/nlohmann/json.hpp"
+#include <fstream>
+#include <string>
 
-using json = nlohmann::json;
 
 class
 Refine3DApp : public MyApp
