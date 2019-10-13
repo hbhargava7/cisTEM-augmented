@@ -68,11 +68,12 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
     std::string str; 
     while (std::getline(file, str))
     {
-    	if (str.compare(patch::to_string(word))) {
-    		wxPrintf("TRUE");
-    	} else {
-    		wxPrintf("FALSE");
-    	}
+    	// if (str.compare(patch::to_string(word))) {
+    	// 	wxPrintf("TRUE");
+    	// } else {
+    	// 	wxPrintf("FALSE");
+    	// }
+    	wxPrintf("Sanity");
         // wxPrintf(wxString(std::string("Current Line: ") + str));
     }
 }
