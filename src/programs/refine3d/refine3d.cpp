@@ -30,7 +30,7 @@ class TextInput {
 
 
 	public:
-		TextInput(std::string * filePath);
+		TextInput(std::string filePath);
 		std::string GetLineWithFirstWord(std::string * firstWord);
 		
 		// float GetFloatFromFile(const char * filePath);
