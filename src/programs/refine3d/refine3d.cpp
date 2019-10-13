@@ -60,12 +60,12 @@ TextInput::TextInput(std::string filePath)
 }
 std::string TextInput::GetLineWithFirstWord(std::string firstWord)
 {
-	wxPrintf("\nGetting line with first word %s", firstWord);
+	wxPrintf(firstWord);
 	std::ifstream file(path.c_str());
     std::string str; 
     while (std::getline(file, str))
     {
-        wxPrintf("Current Line: %s",str);
+        wxPrintf("Current Line: %s", str);
     }
 }
 
@@ -166,7 +166,7 @@ void Refine3DApp::DoInteractiveUserInput()
 	std::string inputPath = std::string(wxAppConsole::argv[1]);
 	TextInput *input = new TextInput(inputPath);
 
-	std::string *word = new std::string("chicken");
+	std::string *word = "chicken";
 	input->GetLineWithFirstWord(word);
 	// input->GetLineWithFirstWord(patch::to_string("Chicken"));
 
