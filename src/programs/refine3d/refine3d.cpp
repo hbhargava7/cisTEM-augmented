@@ -44,7 +44,7 @@ TextInput::TextInput(const char * filePath)
 	wxPrintf("\nInitialized textinput");
 	path = filePath;
 }
-TextInput::GetLineWithFirstWord(const char * firstWord)
+std::string TextInput::GetLineWithFirstWord(const char * firstWord)
 {
 	wxPrintf("\nGetting line with first word %s", firstWord);
 	std::ifstream file(path);
