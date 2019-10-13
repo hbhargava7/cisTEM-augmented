@@ -59,8 +59,8 @@ TextInput::TextInput(std::string filePath)
 	path = filePath;
 }
 std::string TextInput::GetLineWithFirstWord(std::string firstWord)
-{
-	wxPrintf(wxString(std::string("Searching for word: ") + firstWord));
+{	wxPrintf("\nLooking for word:\n");
+	wxPrintf(wxString(firstWord);
 	std::ifstream file(path.c_str());
     std::string str; 
     while (std::getline(file, str))
