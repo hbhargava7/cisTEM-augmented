@@ -60,7 +60,7 @@ TextInput::TextInput(std::string filePath)
 }
 std::string TextInput::GetLineWithFirstWord(std::string firstWord)
 {
-	wxPrintf(firstWord);
+	wxPrintf(wxString::ToStdString(firstWord));
 	std::ifstream file(path.c_str());
     std::string str; 
     while (std::getline(file, str))
