@@ -62,9 +62,9 @@ bool MyApp::OnInit()
 	command_line_parser.SetCmdLine(argc,argv);
 	// command_line_parser.AddParam("controller_address",wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL);
 	// command_line_parser.AddParam("controller_port",wxCMD_LINE_VAL_NUMBER, wxCMD_LINE_PARAM_OPTIONAL);
-	command_line_parser.AddParam("job_code",wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL);
+	// command_line_parser.AddParam("job_code",wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL);
 
-	// command_line_parser.AddParam("parameter_file_path");
+	command_line_parser.AddParam("parameter_file_path");
 
 	// Let the app add options
 	AddCommandLineOptions();
@@ -82,7 +82,7 @@ bool MyApp::OnInit()
 
 	// if we have no arguments run interactively.. if we have 3 continue as though we have network info, else error..
 
-	if (number_of_arguments == 0)
+	if (true)
 	{
 		is_running_locally = true;
 		DoInteractiveUserInput();
@@ -92,13 +92,13 @@ bool MyApp::OnInit()
 		fftwf_cleanup(); // this is needed to stop valgrind reporting memory leaks..
 		exit(0);
 	}
-	else
-	if (number_of_arguments != 3)
-	{
-		command_line_parser.Usage();
-		wxPrintf("\n\n");
-		return false;
-	}
+	// else
+	// if (number_of_arguments != 3)
+	// {
+	// 	command_line_parser.Usage();
+	// 	wxPrintf("\n\n");
+	// 	return false;
+	// }
 
 	is_running_locally = false;
 
