@@ -90,7 +90,7 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
     while (std::getline(file, line))
     {
 
-    	wxPrintf("Found line in file: %s \n", str);
+    	wxPrintf("Found line in file: %s \n", line);
         // wxPrintf(wxString(std::string("Current Line: ") + str));
     }
 	return "CHICKEN FML";
