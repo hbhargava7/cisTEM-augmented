@@ -64,11 +64,11 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
 	wxPrintf("\nLooking for word:\n");
 	// std::string word = patch::to_string(word);
 	// wxPrintf(wxString(patch::to_string(word)));
-	std::ifstream file(path.c_str());
+	std::ifstream file("/home/klim/omg.txt");
 	if (!file.is_open()) {
 		wxPrintf("Could not open file \n");
 	} else {
-		
+
 	}
     std::string str; 
     wxPrintf("Sanity0");
