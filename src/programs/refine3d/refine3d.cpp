@@ -1,6 +1,8 @@
 #include "../../core/core_headers.h"
 #include <wx/cmdline.h>
+#include <nlohmann/json.hpp>
 
+using json = nlohmann::json;
 
 class
 Refine3DApp : public MyApp
@@ -20,6 +22,26 @@ public:
 	Image						*projection_image;
 //	Image						*temp_image;
 };
+
+class TextInput {
+
+	private:
+		char path[1000];
+
+	public:
+		TextInput(const char * filePath);
+		
+		// float GetFloatFromFile(const char * filePath);
+		// int GetIntFromFile(const char * filePath);
+		// std::string GetStringFromFile(const char * filePath);
+		// bool GetBoolFromUser(const char * filePath);
+};
+TextInput::TextInput(const char * filePath)
+{
+	// path = filePath;
+	wxPrintf("Initialized textinput");
+}
+
 
 // This is the function which will be minimized
 float FrealignObjectiveFunction(void *scoring_parameters, float *array_of_values)

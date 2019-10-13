@@ -120,6 +120,7 @@ am_libcore_a_OBJECTS = core/libcore_a-functions.$(OBJEXT) \
 	core/libcore_a-globals.$(OBJEXT) \
 	core/libcore_a-randomnumbergenerator.$(OBJEXT) \
 	core/libcore_a-userinput.$(OBJEXT) \
+	core/libcore_a-textinput.$(OBJEXT) \
 	core/libcore_a-angles_and_shifts.$(OBJEXT) \
 	core/libcore_a-parameter_constraints.$(OBJEXT) \
 	core/libcore_a-assets.$(OBJEXT) \
@@ -736,6 +737,7 @@ noinst_HEADERS = core/asset_group.h \
                  core/assets.h \
                  core/socket_codes.h \
                  core/userinput.h \
+                 core/textinput.h \
                  core/randomnumbergenerator.h \
                  core/matrix.h \
                  core/symmetry_matrix.h \
@@ -916,6 +918,7 @@ libcore_a_SOURCES = core/functions.cpp \
 					   core/globals.cpp \
 					   core/randomnumbergenerator.cpp \
                        core/userinput.cpp \
+                       core/textinput.cpp \
                        core/angles_and_shifts.cpp \
                        core/parameter_constraints.cpp \
                        core/assets.cpp \
