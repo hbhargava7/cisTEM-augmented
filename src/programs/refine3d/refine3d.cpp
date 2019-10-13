@@ -84,6 +84,7 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
  //    	wxPrintf("Sanity");
  //        // wxPrintf(wxString(std::string("Current Line: ") + str));
  //    }
+	return "CHICKEN FML"
 }
 
 
