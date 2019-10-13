@@ -137,7 +137,7 @@ void Refine3DApp::DoInteractiveUserInput()
 	bool		normalize_input_3d = true;
 	bool		threshold_input_3d = true;
 
-	wxPrintf(wxString::Format("%s", wxAppConsole::argv));
+	wxPrintf(wxAppConsole::argv[0]);
 	
 	UserInput *my_input = new UserInput("Hersh's Augmented Refine3D", 1.02);
 
