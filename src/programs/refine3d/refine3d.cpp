@@ -64,8 +64,10 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
 	wxPrintf("\nLooking for word:\n");
 	// std::string word = patch::to_string(word);
 	// wxPrintf(wxString(patch::to_string(word)));
-	std::ifstream file(path);
+	std::ifstream file(path.c_str());
     std::string str; 
+    wxPrintf("Sanity0");
+
     while (std::getline(file, str))
     {
     	// if (str.compare(patch::to_string(word))) {
