@@ -26,7 +26,7 @@ public:
 class TextInput {
 
 	private:
-		char path[1000];
+		std::string path;
 
 
 	public:
