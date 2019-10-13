@@ -61,29 +61,28 @@ TextInput::TextInput(const char *filePath)
 }
 std::string TextInput::GetLineWithFirstWord(const char *word)
 {	
-	wxPrintf("\nLooking for word:\n");
-	// std::string word = patch::to_string(word);
-	// wxPrintf(wxString(patch::to_string(word)));
-	// std::ifstream file("/home/klim/omg.txt");
-	wxPrintf("\nOpened the file");
-	// if (!file.is_open()) {
-	// 	wxPrintf("Could not open file \n");
-	// } else {
+	wxPrintf("\nLooking for word: %s \n", patch::to_string(word));
+
+	std::ifstream file(path.c_str());
+	if (!file.is_open()) {
+		wxPrintf("Could not open file \n");
+		return "NULL";
+	}
 
 	// }
- //    std::string str; 
- //    wxPrintf("Sanity0");
+    std::string str; 
+    wxPrintf("Sanity0");
 
- //    while (std::getline(file, str))
- //    {
- //    	// if (str.compare(patch::to_string(word))) {
- //    	// 	wxPrintf("TRUE");
- //    	// } else {
- //    	// 	wxPrintf("FALSE");
- //    	// }
- //    	wxPrintf("Sanity");
- //        // wxPrintf(wxString(std::string("Current Line: ") + str));
- //    }
+    while (std::getline(file, str))
+    {
+    	// if (str.compare(patch::to_string(word))) {
+    	// 	wxPrintf("TRUE");
+    	// } else {
+    	// 	wxPrintf("FALSE");
+    	// }
+    	wxPrintf("Sanity");
+        // wxPrintf(wxString(std::string("Current Line: ") + str));
+    }
 	return "CHICKEN FML";
 }
 
