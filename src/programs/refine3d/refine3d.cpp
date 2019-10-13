@@ -166,7 +166,7 @@ void Refine3DApp::DoInteractiveUserInput()
 	std::string inputPath = std::string(wxAppConsole::argv[1]);
 	TextInput *input = new TextInput(inputPath);
 
-	std::string word = "chicken";
+	std::string *word = new std::string("chicken");
 	input->GetLineWithFirstWord(word);
 	// input->GetLineWithFirstWord(patch::to_string("Chicken"));
 
