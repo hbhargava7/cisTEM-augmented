@@ -136,7 +136,7 @@ void Refine3DApp::DoInteractiveUserInput()
 	bool		normalize_input_3d = true;
 	bool		threshold_input_3d = true;
 
-	UserInput *my_input = new UserInput("Refine3D", 1.02);
+	UserInput *my_input = new UserInput("Hersh's Augmented Refine3D", 1.02);
 
 	input_particle_images = my_input->GetFilenameFromUser("Input particle images", "The input image stack, containing the experimental particle images", "my_image_stack.mrc", true);
 	input_parameter_file = my_input->GetFilenameFromUser("Input Frealign parameter filename", "The input parameter file, containing your particle alignment parameters", "my_parameters.par", true);
