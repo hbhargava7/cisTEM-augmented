@@ -93,7 +93,7 @@ const std::complex<float> I(0.0,1.0);
 #include "particle_finder.h"
 #include "myapp.h"
 #include "rle3d.h"
-#include "textInput.h"
+#include "textinput.h"
 
 #ifdef MKL
 #include <mkl.h>
