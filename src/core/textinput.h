@@ -4,7 +4,7 @@ class TextInput {
 		char path[1000];
 
 	public:
-		TextInput(const char * filePath);
+		extern "C" TextInput(const char * filePath);
 		
 		// float GetFloatFromFile(const char * filePath);
 		// int GetIntFromFile(const char * filePath);
