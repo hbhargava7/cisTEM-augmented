@@ -2,8 +2,9 @@
 #include <wx/cmdline.h>
 #include <fstream>
 #include <string>
-
 #include <sstream>
+#include <vector>
+#include <iterator>
 
 // for std::tostring fix
 namespace patch
@@ -52,6 +53,22 @@ class TextInput {
 		// std::string GetStringFromFile(const char * filePath);
 		// bool GetBoolFromUser(const char * filePath);
 };
+
+template<typename Out>
+void split(const std::string &s, char delim, Out result) {
+    std::stringstream ss(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        *(result++) = item;
+    }
+}
+
+std::vector<std::string> split(const std::string &s, char delim) {
+    std::vector<std::string> elems;
+    split(s, delim, std::back_inserter(elems));
+    return elems;
+}
+
 TextInput::TextInput(const char *filePath)
 {
 	// path = filePath;
@@ -69,15 +86,11 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
 		return "NULL";
 	}
 
-    std::string str; 
-    while (std::getline(file, str))
+    std::string line; 
+    while (std::getline(file, line))
     {
-    	// if (str.compare(patch::to_string(word))) {
-    	// 	wxPrintf("TRUE");
-    	// } else {
-    	// 	wxPrintf("FALSE");
-    	// }
-    	wxPrintf("Found line in file: %s", str);
+
+    	wxPrintf("Found line in file: %s \n", str);
         // wxPrintf(wxString(std::string("Current Line: ") + str));
     }
 	return "CHICKEN FML";
