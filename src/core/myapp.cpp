@@ -62,9 +62,9 @@ bool MyApp::OnInit()
 	command_line_parser.SetCmdLine(argc,argv);
 	// command_line_parser.AddParam("controller_address",wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL);
 	// command_line_parser.AddParam("controller_port",wxCMD_LINE_VAL_NUMBER, wxCMD_LINE_PARAM_OPTIONAL);
-	// command_line_parser.AddParam("job_code",wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL);
+	command_line_parser.AddParam("job_code",wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL);
 
-	command_line_parser.AddParam("parameter_file_path");
+	// command_line_parser.AddParam("parameter_file_path");
 
 	// Let the app add options
 	AddCommandLineOptions();
