@@ -7,7 +7,7 @@ Refine3DApp : public MyApp
 
 	bool DoCalculation();
 	void DoInteractiveUserInput();
-
+	int main(int argc, char **argv);
 	private:
 };
 
@@ -81,7 +81,8 @@ IMPLEMENT_APP(Refine3DApp)
 
 // override the DoInteractiveUserInput
 
-void Refine3DApp::DoInteractiveUserInput()
+// void Refine3DApp::DoInteractiveUserInput()
+int main(int argc, char **argv)
 {
 	wxString	input_particle_images;
 	wxString	input_parameter_file;
