@@ -44,22 +44,24 @@ class TextInput {
 
 
 	public:
-		TextInput(std::string filePath);
-		std::string GetLineWithFirstWord(std::string firstWord);
+		TextInput(const char *filePath);
+		std::string GetLineWithFirstWord(const char *word);
 		
 		// float GetFloatFromFile(const char * filePath);
 		// int GetIntFromFile(const char * filePath);
 		// std::string GetStringFromFile(const char * filePath);
 		// bool GetBoolFromUser(const char * filePath);
 };
-TextInput::TextInput(std::string filePath)
+TextInput::TextInput(const char *filePath)
 {
 	// path = filePath;
-	wxPrintf("\nInitialized textinput");
-	path = filePath;
+	path = patch::to_string(filePath);\
+	wxPrintf("\nInitialized textinput with path: %s", path);
+
 }
-std::string TextInput::GetLineWithFirstWord(std::string firstWord)
-{	wxPrintf("\nLooking for word:\n");
+std::string TextInput::GetLineWithFirstWord(const char *word)
+{	
+	wxPrintf("\nLooking for word:\n");
 	wxPrintf(wxString(firstWord));
 	std::ifstream file(path.c_str());
     std::string str; 
