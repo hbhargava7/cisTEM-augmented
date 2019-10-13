@@ -30,21 +30,21 @@ class TextInput {
 
 
 	public:
-		TextInput(const char * filePath);
-		std::string GetLineWithFirstWord(const char * firstWord);
+		TextInput(std::string * filePath);
+		std::string GetLineWithFirstWord(std::string * firstWord);
 		
 		// float GetFloatFromFile(const char * filePath);
 		// int GetIntFromFile(const char * filePath);
 		// std::string GetStringFromFile(const char * filePath);
 		// bool GetBoolFromUser(const char * filePath);
 };
-TextInput::TextInput(const char * filePath)
+TextInput::TextInput(std::string * filePath)
 {
 	// path = filePath;
 	wxPrintf("\nInitialized textinput");
 	path = filePath;
 }
-std::string TextInput::GetLineWithFirstWord(const char * firstWord)
+std::string TextInput::GetLineWithFirstWord(std::string * firstWord)
 {
 	wxPrintf("\nGetting line with first word %s", firstWord);
 	std::ifstream file(path);
@@ -79,33 +79,6 @@ float FrealignObjectiveFunction(void *scoring_parameters, float *array_of_values
 			*comparison_object->particle->ctf_image, comparison_object->particle->alignment_parameters, 0.0, 0.0,
 			comparison_object->particle->pixel_size / comparison_object->particle->filter_radius_high, false, true, false, true, true);
 
-//	if (comparison_object->particle->origin_micrograph < 0) comparison_object->particle->origin_micrograph = 0;
-//	comparison_object->particle->origin_micrograph++;
-//	for (int i = 0; i < comparison_object->projection_image->real_memory_allocated; i++) {comparison_object->projection_image->real_values[i] *= fabs(comparison_object->projection_image->real_values[i]);}
-//	comparison_object->projection_image->ForwardFFT();
-//	comparison_object->projection_image->CalculateCrossCorrelationImageWith(comparison_object->particle->particle_image);
-//	comparison_object->projection_image->SwapRealSpaceQuadrants();
-//	comparison_object->projection_image->BackwardFFT();
-//	comparison_object->projection_image->QuickAndDirtyWriteSlice("proj.mrc", comparison_object->particle->origin_micrograph);
-//	comparison_object->projection_image->SwapRealSpaceQuadrants();
-//	comparison_object->particle->particle_image->SwapRealSpaceQuadrants();
-//	comparison_object->particle->particle_image->BackwardFFT();
-//	comparison_object->particle->particle_image->QuickAndDirtyWriteSlice("part.mrc", comparison_object->particle->origin_micrograph);
-//	comparison_object->particle->particle_image->SwapRealSpaceQuadrants();
-//	exit(0);
-
-//	float score =  	- comparison_object->particle->particle_image->GetWeightedCorrelationWithImage(*comparison_object->projection_image, comparison_object->particle->bin_index,
-//			  comparison_object->particle->pixel_size / comparison_object->particle->signed_CC_limit)
-//			- comparison_object->particle->ReturnParameterPenalty(comparison_object->particle->temp_float);
-//	wxPrintf("psi, theta, phi, x, y, = %g, %g, %g, %g, %g, score = %g\n",
-//			comparison_object->particle->alignment_parameters.ReturnPsiAngle(),
-//			comparison_object->particle->alignment_parameters.ReturnThetaAngle(),
-//			comparison_object->particle->alignment_parameters.ReturnPhiAngle(),
-//			comparison_object->particle->alignment_parameters.ReturnShiftX(),
-//			comparison_object->particle->alignment_parameters.ReturnShiftY(), score);
-//	return score;
-//	wxPrintf("sigma_noise, mask_volume, penalty = %g %g %g\n", comparison_object->particle->sigma_noise, comparison_object->particle->mask_volume,
-//			comparison_object->particle->ReturnParameterPenalty(comparison_object->particle->temp_float));
 	return 	- comparison_object->particle->particle_image->GetWeightedCorrelationWithImage(*comparison_object->projection_image, comparison_object->particle->bin_index,
 			  comparison_object->particle->pixel_size / comparison_object->particle->signed_CC_limit)
 			- comparison_object->particle->ReturnParameterPenalty(comparison_object->particle->temp_float);
@@ -176,8 +149,8 @@ void Refine3DApp::DoInteractiveUserInput()
 	wxPrintf("\n\n        **   Welcome to Hersh's Augmented Refine3d   **\n\n");
 	wxPrintf("\n Reading parameters from file: %s",std::string(wxAppConsole::argv[1]));
 	
-	const char *inputPath = std::string(wxAppConsole::argv[1]).c_str();
-	TextInput *input = new TextInput(std::string(wxAppConsole::argv[1]).c_str());
+	std::string *inputPath = std::string(wxAppConsole::argv[1]);
+	TextInput *input = new TextInput(inputPath);
 
 	UserInput *my_input = new UserInput("Hersh's Augmented Refine3D", 1.02);
 
