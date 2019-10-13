@@ -54,6 +54,7 @@ class TextInput {
 		// bool GetBoolFromUser(const char * filePath);
 };
 
+// functions for splitting a string by a delimeter
 template<typename Out>
 void split(const std::string &s, char delim, Out result) {
     std::stringstream ss(s);
@@ -69,10 +70,10 @@ std::vector<std::string> split(const std::string &s, char delim) {
     return elems;
 }
 
+// TextInput implementation
 TextInput::TextInput(const char *filePath)
 {
-	// path = filePath;
-	path = patch::to_string(filePath);\
+	path = patch::to_string(filePath);
 	wxPrintf("\nInitialized textinput with path: %s", path);
 
 }
@@ -89,18 +90,16 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
     std::string line; 
     while (std::getline(file, line))
     {
-
     	wxPrintf("Found line in file: %s \n", line);
     	std::vector<std::string> x = split(line, ' ');
-    	for (int i=0; i<x.size(); i++)  {
-    		wxPrintf("Split Result %s \n", x[i]);     
 
-    	}   
+    	if x[0].compare(patch::to_string(word)) {
+    		// We have the line of interest
+    		return x[1];
+    	}
 	} 
-
-
-        // wxPrintf(wxString(std::string("Current Line: ") + str));
-	return "CHICKEN FML";
+	wxPrintf("Could not find desired parameter \n");
+	return "NULL";
 }
 
 
