@@ -166,7 +166,9 @@ void Refine3DApp::DoInteractiveUserInput()
 	std::string inputPath = std::string(wxAppConsole::argv[1]);
 	TextInput *input = new TextInput(inputPath);
 
-	input->GetLineWithFirstWord(patch::to_string("Chicken"));
+	std::string word = "chicken";
+	input->GetLineWithFirstWord(word);
+	// input->GetLineWithFirstWord(patch::to_string("Chicken"));
 
 	UserInput *my_input = new UserInput("Hersh's Augmented Refine3D", 1.02);
 
