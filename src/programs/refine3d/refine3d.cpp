@@ -38,7 +38,7 @@ class TextInput {
 		// std::string GetStringFromFile(const char * filePath);
 		// bool GetBoolFromUser(const char * filePath);
 };
-TextInput::TextInput(std::string * filePath)
+TextInput::TextInput(std::string filePath)
 {
 	// path = filePath;
 	wxPrintf("\nInitialized textinput");
