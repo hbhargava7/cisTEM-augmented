@@ -1,4 +1,6 @@
 #include "../../core/core_headers.h"
+#include <wx/cmdline.h>
+
 
 class
 Refine3DApp : public MyApp
@@ -7,7 +9,6 @@ Refine3DApp : public MyApp
 
 	bool DoCalculation();
 	void DoInteractiveUserInput();
-	int main(int argc, char **argv);
 	private:
 };
 
@@ -77,12 +78,11 @@ float FrealignObjectiveFunction(void *scoring_parameters, float *array_of_values
 
 }
 
-// IMPLEMENT_APP(Refine3DApp)
+IMPLEMENT_APP(Refine3DApp)
 
 // override the DoInteractiveUserInput
 
-// void Refine3DApp::DoInteractiveUserInput()
-int main(int argc, char **argv)
+void Refine3DApp::DoInteractiveUserInput()
 {
 	wxString	input_particle_images;
 	wxString	input_parameter_file;
@@ -137,6 +137,8 @@ int main(int argc, char **argv)
 	bool		normalize_input_3d = true;
 	bool		threshold_input_3d = true;
 
+	wxPrintf(wxAppConsole::argv)
+	
 	UserInput *my_input = new UserInput("Hersh's Augmented Refine3D", 1.02);
 
 	input_particle_images = my_input->GetFilenameFromUser("Input particle images", "The input image stack, containing the experimental particle images", "my_image_stack.mrc", true);
