@@ -77,7 +77,7 @@ float FrealignObjectiveFunction(void *scoring_parameters, float *array_of_values
 
 }
 
-IMPLEMENT_APP(Refine3DApp)
+// IMPLEMENT_APP(Refine3DApp)
 
 // override the DoInteractiveUserInput
 
