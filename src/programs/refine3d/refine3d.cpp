@@ -69,10 +69,7 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
 		return "NULL";
 	}
 
-	// }
     std::string str; 
-    wxPrintf("Sanity0");
-
     while (std::getline(file, str))
     {
     	// if (str.compare(patch::to_string(word))) {
@@ -80,7 +77,7 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
     	// } else {
     	// 	wxPrintf("FALSE");
     	// }
-    	wxPrintf("Sanity");
+    	wxPrintf("Found line in file: %s", str);
         // wxPrintf(wxString(std::string("Current Line: ") + str));
     }
 	return "CHICKEN FML";
