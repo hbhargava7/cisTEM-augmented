@@ -3,6 +3,20 @@
 #include <fstream>
 #include <string>
 
+#include <sstream>
+
+// for std::tostring fix
+namespace patch
+{
+    template < typename T > std::string to_string( const T& n )
+    {
+        std::ostringstream stm ;
+        stm << n ;
+        return stm.str() ;
+    }
+}
+
+
 
 class
 Refine3DApp : public MyApp
@@ -152,7 +166,7 @@ void Refine3DApp::DoInteractiveUserInput()
 	std::string inputPath = std::string(wxAppConsole::argv[1]);
 	TextInput *input = new TextInput(inputPath);
 
-	input->GetLineWithFirstWord(std::to_string("Chicken"));
+	input->GetLineWithFirstWord(patch::to_string("Chicken"));
 
 	UserInput *my_input = new UserInput("Hersh's Augmented Refine3D", 1.02);
 
