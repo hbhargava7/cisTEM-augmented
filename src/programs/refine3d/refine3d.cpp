@@ -62,13 +62,18 @@ TextInput::TextInput(const char *filePath)
 std::string TextInput::GetLineWithFirstWord(const char *word)
 {	
 	wxPrintf("\nLooking for word:\n");
-
+	// std::string word = patch::to_string(word);
 	// wxPrintf(wxString(patch::to_string(word)));
 	std::ifstream file(path.c_str());
     std::string str; 
     while (std::getline(file, str))
     {
-        wxPrintf(wxString(std::string("Current Line: ") + str));
+    	if (str.compare(patch::to_string(word))) {
+    		wxPrintf("TRUE");
+    	} else {
+    		wxPrintf("FALSE");
+    	}
+        // wxPrintf(wxString(std::string("Current Line: ") + str));
     }
 }
 
@@ -168,7 +173,7 @@ void Refine3DApp::DoInteractiveUserInput()
 	
 	TextInput *input = new TextInput((wxAppConsole::argv[1]).mb_str());
 
-	input->GetLineWithFirstWord("chicken");
+	wxString outputString = input->GetLineWithFirstWord("chicken");
 	// input->GetLineWithFirstWord(patch::to_string("Chicken"));
 
 	UserInput *my_input = new UserInput("Hersh's Augmented Refine3D", 1.02);
