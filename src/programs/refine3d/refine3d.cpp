@@ -137,8 +137,13 @@ void Refine3DApp::DoInteractiveUserInput()
 	bool		normalize_input_3d = true;
 	bool		threshold_input_3d = true;
 
-	wxPrintf(wxAppConsole::argv[1]);
+	// wxAppConsole::argv[1] contains the filepath
+	wxPrintf("\n\n        **   Welcome to Hersh's Augmented Refine3d   **\n\n");
+	wxPrintf("\n Reading parameters from file: %s" % wxAppConsole::argv[1]);
 	
+
+	TextInput *input = new TextInput(wxAppConsole::argv[1])
+
 	UserInput *my_input = new UserInput("Hersh's Augmented Refine3D", 1.02);
 
 	input_particle_images = my_input->GetFilenameFromUser("Input particle images", "The input image stack, containing the experimental particle images", "my_image_stack.mrc", true);
