@@ -92,13 +92,14 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
 
     	wxPrintf("Found line in file: %s \n", line);
     	std::vector<std::string> x = split(line, ' ');
-    	for (int i=0; i<x.size(); i++)     
-        	wxPrintf("Split Result %s \n", x[i]);     
+    	for (int i=0; i<x.size(); i++)  {
+    		wxPrintf("Split Result %s \n", x[i]);     
+
+    	}   
 	} 
 
 
         // wxPrintf(wxString(std::string("Current Line: ") + str));
-    }
 	return "CHICKEN FML";
 }
 
