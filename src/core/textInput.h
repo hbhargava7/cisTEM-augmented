@@ -8,4 +8,4 @@ class TextInput {
 		int GetIntFromFile(const char * filePath);
 		std::string GetStringFromFile(const char * filePath);
 		bool GetBoolFromUser(const char * filePath);
-}
+};
