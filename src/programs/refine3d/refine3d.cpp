@@ -65,24 +65,25 @@ std::string TextInput::GetLineWithFirstWord(const char *word)
 	// std::string word = patch::to_string(word);
 	// wxPrintf(wxString(patch::to_string(word)));
 	std::ifstream file("/home/klim/omg.txt");
-	if (!file.is_open()) {
-		wxPrintf("Could not open file \n");
-	} else {
+	wxPrintf("\nOpened the file");
+	// if (!file.is_open()) {
+	// 	wxPrintf("Could not open file \n");
+	// } else {
 
-	}
-    std::string str; 
-    wxPrintf("Sanity0");
+	// }
+ //    std::string str; 
+ //    wxPrintf("Sanity0");
 
-    while (std::getline(file, str))
-    {
-    	// if (str.compare(patch::to_string(word))) {
-    	// 	wxPrintf("TRUE");
-    	// } else {
-    	// 	wxPrintf("FALSE");
-    	// }
-    	wxPrintf("Sanity");
-        // wxPrintf(wxString(std::string("Current Line: ") + str));
-    }
+ //    while (std::getline(file, str))
+ //    {
+ //    	// if (str.compare(patch::to_string(word))) {
+ //    	// 	wxPrintf("TRUE");
+ //    	// } else {
+ //    	// 	wxPrintf("FALSE");
+ //    	// }
+ //    	wxPrintf("Sanity");
+ //        // wxPrintf(wxString(std::string("Current Line: ") + str));
+ //    }
 }
 
 
